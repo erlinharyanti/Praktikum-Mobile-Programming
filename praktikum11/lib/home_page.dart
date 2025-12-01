@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'login.dart'; // Halaman LoginPage
-import '../session_manager.dart'; // Pastikan mengimpor SessionManager
+import 'login.dart'; 
+import '../session_manager.dart'; 
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,12 +14,12 @@ class HomePage extends StatelessWidget {
           content: const Text('Apakah Anda yakin ingin keluar?'),
           actions: [
             TextButton(
-              onPressed: () => Navigator.of(context).pop(false), // Tidak logout
+              onPressed: () => Navigator.of(context).pop(false), 
               child: const Text('Batal'),
             ),
             TextButton(
               onPressed: () =>
-                  Navigator.of(context).pop(true), // Konfirmasi logout
+                  Navigator.of(context).pop(true), 
               child: const Text('Keluar'),
             ),
           ],
@@ -28,12 +28,12 @@ class HomePage extends StatelessWidget {
     );
 
     if (shouldLogout == true) {
-      await SessionManager.clearSession(); // Menghapus data sesi
+      await SessionManager.clearSession(); 
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => const LoginPage(),
-        ), // Navigasi ke LoginPage
+        ), 
       );
     }
   }
@@ -45,8 +45,8 @@ class HomePage extends StatelessWidget {
         title: const Text('Home Page'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.logout), // Ikon logout
-            onPressed: () => _confirmLogout(context), // Konfirmasi logout
+            icon: const Icon(Icons.logout),
+            onPressed: () => _confirmLogout(context),
           ),
         ],
       ),
@@ -60,10 +60,10 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Image.asset(
-              'images/Png.jpg', // Path gambar
-              width: 200, // Lebar gambar
-              height: 200, // Tinggi gambar
-              fit: BoxFit.cover, // Menyesuaikan gambar
+              'images/Png.jpg',
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
             ),
           ],
         ),

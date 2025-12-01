@@ -17,7 +17,7 @@ class SessionManager {
 
   static Future<bool> isLoggedIn() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool(_keyIsLoggedIn) ?? false; //kalo key nya ga ada, return false
+    return prefs.getBool(_keyIsLoggedIn) ?? false; 
   }
 
   static Future<void> clearSession() async {
